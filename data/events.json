@@ -1,0 +1,26 @@
+[
+  {
+    "id": "3d2c54fb-8c79-485b-a766-57f76b245f6a",
+    "title": "python",
+    "date": "2026-06-10T16:00:00.000Z",
+    "time": "02:00",
+    "description": "",
+    "color": "#1976d2",
+    "sendNotification": false,
+    "isTask": true,
+    "createdAt": "2026-06-09T12:22:51.739Z",
+    "updatedAt": "2026-06-09T12:22:55.494Z"
+  },
+  {
+    "id": "6d28cb5e-d7d0-41f9-b57e-906aa6610d3b",
+    "title": "python",
+    "date": "2026-06-17T16:32:46.772Z",
+    "time": "01:00",
+    "description": "",
+    "color": "#d22b19",
+    "sendNotification": true,
+    "isTask": true,
+    "createdAt": "2026-06-17T16:33:08.167Z",
+    "updatedAt": "2026-06-17T16:33:33.292Z"
+  }
+]

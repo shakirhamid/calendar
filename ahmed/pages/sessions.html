@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Planner - Sessions</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="sessions">
+  <div class="app-shell">
+    <main class="page-content">
+      <section class="hero">
+        <div>
+          <h1>Study Sessions</h1>
+          <p>Plan, filter, and update your study workflow.</p>
+        </div>
+        <div class="hero-badge">SP</div>
+      </section>
+
+      <section class="focus-card card">
+        <div class="section-title">
+          <h2>Focus Now</h2>
+          <small>Suggested next step</small>
+        </div>
+        <p id="focus-text"></p>
+        <div class="focus-meta" id="focus-meta"></div>
+      </section>
+
+      <section class="quick-stats">
+        <article class="mini-card">
+          <small>Total sessions</small>
+          <strong id="mini-total-sessions">0</strong>
+        </article>
+        <article class="mini-card">
+          <small>Total hours</small>
+          <strong id="mini-total-hours">0</strong>
+        </article>
+      </section>
+
+      <section class="search-row">
+        <label class="search-box">
+          <span>Search</span>
+          <input id="search-input" type="search" placeholder="Search sessions" />
+        </label>
+        <button class="add-button" id="open-sheet-button" type="button">+</button>
+      </section>
+
+      <section class="toolbar-card card">
+        <div class="toolbar-grid">
+          <label class="toolbar-group">
+            <span>Sort by</span>
+            <select id="sort-select">
+              <option value="date-asc">Date ascending</option>
+              <option value="date-desc">Date descending</option>
+              <option value="hours-desc">Hours</option>
+              <option value="priority-desc">Priority</option>
+            </select>
+          </label>
+          <label class="toolbar-group">
+            <span>Status</span>
+            <select id="status-filter">
+              <option value="all">All</option>
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
+              <option value="today">Today</option>
+            </select>
+          </label>
+        </div>
+        <p id="results-count">0 results</p>
+      </section>
+
+      <section class="sessions-list" id="sessions-list"></section>
+    </main>
+
+    <nav class="tab-bar">
+      <a class="tab-link active" href="./sessions.html">Sessions</a>
+      <a class="tab-link" href="./analytics.html">Analytics</a>
+      <a class="tab-link" href="./settings.html">Settings</a>
+    </nav>
+  </div>
+
+  <div class="sheet-backdrop" id="sheet-backdrop"></div>
+
+  <section class="bottom-sheet" id="session-sheet" aria-hidden="true">
+    <div class="sheet-handle"></div>
+    <div class="section-title">
+      <div>
+        <h2 id="sheet-title">Add a new session</h2>
+        <small id="sheet-subtitle">Enter your study session details to update the planner instantly.</small>
+      </div>
+      <button class="icon-button" id="close-sheet-button" type="button">Close</button>
+    </div>
+    <form id="session-form">
+      <input id="edit-session-id" name="editSessionId" type="hidden" />
+      <div class="form-grid">
+        <label class="field">
+          <span>Subject</span>
+          <input id="subject" name="subject" type="text" required />
+        </label>
+        <label class="field">
+          <span>Task</span>
+          <textarea id="task" name="task" required></textarea>
+        </label>
+        <div class="form-row">
+          <label class="field">
+            <span>Hours</span>
+            <input id="hours" name="hours" type="number" step="0.5" min="0.5" max="12" required />
+          </label>
+          <label class="field">
+            <span>Date</span>
+            <input id="date" name="date" type="date" required />
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="field">
+            <span>Priority</span>
+            <select id="priority" name="priority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Status</span>
+            <select id="completed" name="completed">
+              <option value="false">In progress</option>
+              <option value="true">Completed</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">
+          <span>Notes</span>
+          <textarea id="notes" name="notes"></textarea>
+        </label>
+      </div>
+      <div class="sheet-actions">
+        <button class="secondary-button" type="button" id="close-sheet-button-secondary">Cancel</button>
+        <button class="primary-button" type="submit">Save session</button>
+      </div>
+    </form>
+  </section>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../js/storage.js" defer></script>
+  <script src="../js/ui.js" defer></script>
+  <script src="../js/sessions.js" defer></script>
+  <script src="../app.js" defer></script>
+</body>
+</html>

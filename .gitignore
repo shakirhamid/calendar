@@ -1,0 +1,17 @@
+node_modules
+.next
+dist
+build
+*.log
+.env
+.env.local
+.env.*.local
+.DS_Store
+.vscode
+*.swp
+*.swo
+package-lock.json
+yarn.lock
+.idea
+.firebase
+.prisma
